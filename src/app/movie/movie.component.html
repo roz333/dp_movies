@@ -1,0 +1,48 @@
+<ng-template #tplMovie let-selectedMovie>
+    <div class="movie_container">
+        <div class="titles">
+            <div>Movie ID</div>
+            <div class="center_shift">Genre</div>
+            <div>Votes</div>
+            <div>Duration</div>
+            <div class="center_shift">Actors</div>
+        </div>
+        <div>
+            <div class="movie_info">
+                <div class="info first_title movie_id" (click)=clickedId()>{{ selectedMovie.imdbID }} </div>
+                <div class="info center_shift">{{ selectedMovie.Genre }}</div>
+                <div class="info">{{ selectedMovie.imdbVotes }}</div>
+                <div class="info">{{ selectedMovie.Runtime }}</div>
+                <div class="info center_shift">{{ selectedMovie.Actors }}</div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template *ngTemplateOutlet="tplMovie; context: {$implicit: selectedMovie}"></ng-template>
+
+
+<div class="extraMovieInfo" *ngIf="clickedflag">
+    <div class="titles">
+        <div>Writer</div>
+        <div class="center_shift">Country</div>
+        <div>Released</div>
+        <div>Language</div>
+        <div class="center_shift">Production</div>
+    </div>
+    <div>
+        <div class="movie_info">
+            <div class="info">{{ selectedMovie.Writer }} </div>
+            <div class="info center_shift">{{ selectedMovie.Country }}</div>
+            <div class="info">{{ selectedMovie.Released }}</div>
+            <div class="info">{{ selectedMovie.Language }}</div>
+            <div class="info center_shift">{{ selectedMovie.Production }}</div>
+        </div>
+    </div>
+</div>
+
+
+<!-- for production info , I dont have the right API for that -->
+<!-- <div *ngIf="clickedflag">
+        <ng-template *ngTemplateOutlet="tplMovie; context: {$implicit: movieProduction}"></ng-template>
+    </div> -->

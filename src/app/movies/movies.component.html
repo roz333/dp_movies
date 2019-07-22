@@ -1,0 +1,28 @@
+<input class="searchMovie" (keyup)="filterSrarch($event)" type="text" name="movie" placeholder="Search movies">
+
+<div class="my_app" *ngIf="flagApp">
+
+    <div class="titles">
+
+        <div>Name <button (click)="sortByName()">SORT</button></div>
+        <div class="year">Year</div>
+        <div>Genre</div>
+        <div>Director</div>
+        <div class="ratings">Ratings</div>
+    </div>
+
+    <div *ngFor="let movie of (moviesListState | async).movies; let i = index">
+
+        <div class="movie_info">
+            <div class="info title" (click)=clickedMovie(movie)>{{ movie.Title}} </div>
+            <div class="info year">{{ movie.Year }} </div>
+            <div class="info genre">{{ movie.Genre }}</div>
+            <div class="info director">{{ movie.Director }}</div>
+            <div class="info ratings">{{ movie.imdbRating }}</div>
+        </div>
+        <div class="movieId_table">
+            <app-movie *ngIf="show && selected_movie.Title == movie.Title" [i]=i></app-movie>
+        </div>
+    </div>
+
+</div>

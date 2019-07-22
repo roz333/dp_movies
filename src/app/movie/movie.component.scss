@@ -1,0 +1,23 @@
+@import '../shared/style/table.scss';
+.titles {
+    @extend %titles;
+    div {
+        @extend %titlesdiv;
+        color: darkcyan;
+    }
+}
+
+.movie_info {
+    @extend %movie_info;
+    border-color: #000;
+    div.info {
+        @extend %movie_info_div;
+    }
+    .first_title {
+        cursor: pointer;
+    }
+}
+
+.center_shift {
+    @extend %center_el;
+}

@@ -1,0 +1,36 @@
+%titles {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+%titlesdiv {
+    height: auto;
+    flex-basis: 20%;
+    color: rgba(0, 0, 0, .54);
+    font-size: 14px;
+    padding: 20px;
+    font-weight: bold;
+}
+
+%movie_info {
+    display: flex;
+    border-bottom: 1px solid rgba(0, 0, 0, .12);
+    font-size: 14px;
+}
+
+%movie_info_div {
+    display: flex;
+    flex-basis: 20%;
+    align-items: center;
+    padding: 10px 20px;
+    overflow: hidden;
+    line-height: 16px;
+    height: 32px;
+    word-wrap: break-word;
+}
+
+%center_el {
+    text-align: center;
+    justify-content: center;
+}
